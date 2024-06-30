@@ -1,0 +1,33 @@
+pipeline{
+    agent any
+        stages{
+            stage('build'){
+                steps{
+                    sh 'python -v'
+                }
+            }
+        }
+
+        post{
+
+            always{
+                echo 'ALWAYS'
+            }
+
+            success{
+                echo 'ONLY ON SUCCESS'
+            }
+
+            failure{
+                echo 'ONLY ON FAILURE'
+            }
+
+            unstable{
+                echo 'ONLY IF RUN IS UNSTABLE'
+            }
+
+            changed{
+                echo 'ONLY IS STATUS CHANGED FROM SUCCESS TO FAIL OR VICE VERSA w.r.t last run.'
+            }
+        }
+}
