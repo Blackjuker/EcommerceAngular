@@ -1,12 +1,6 @@
 pipeline{
     agent any
         stages{
-            stage('init'){
-                steps{
-                    sh 'sudo su apt-get update'
-                    sh 'sudo su apt-get install -y python3 python3-pip'
-                }
-            }
             stage('build'){
                 steps{
                     sh 'python3 --version'
