@@ -1,12 +1,10 @@
 pipeline{
     agent any
         stages{
-            stage('init'){
             stage('build'){
                 steps{
-                    sh 'python3 s --version'
+                    sh 'python3 --version'
                 }
-            }
             }
         }
 
