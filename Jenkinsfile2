@@ -3,11 +3,12 @@ pipeline{
         stages{
             stage('init'){
                 steps{
-                     sh '''
-                    # Update package list and install Python
-                    apt-get update
-                    apt-get install -y python3 python3-pip
-                '''
+                    sh '''
+                        # Switch to root user and install Python
+                        sudo su -
+                        apt-get update
+                        apt-get install -y python3 python3-pip
+                    '''
                 }
             }
             stage('build'){
