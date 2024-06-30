@@ -12,7 +12,6 @@ pipeline{
 
             always{
                 echo 'ALWAYS'
-                d
             }
 
             success{
