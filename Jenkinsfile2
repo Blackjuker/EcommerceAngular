@@ -7,6 +7,7 @@ pipeline{
                     sh 'python3 s --version'
                 }
             }
+            }
         }
 
         post{
