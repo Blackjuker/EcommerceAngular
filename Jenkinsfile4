@@ -36,16 +36,16 @@ pipeline{
                     }
                 } 
             }
-             stage('Release to prod'){
+            stage('Release to prod'){
                 steps{
                     sh 'echo Releasing to prod'
                 } 
             }
         }
+}
 
         post{
             always{
                 echo 'ALWAYS'
             }
         }
-}
