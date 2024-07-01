@@ -25,13 +25,13 @@ pipeline{
                 steps{
                     parallel{
                         chrome :{
-                             sh 'echo Running chrome'
+                            sh 'echo Running chrome'
                         },
                         firefox :{
-                             sh 'echo Running firefox'
+                            sh 'echo Running firefox'
                         },
                         safari :{
-                             sh 'echo Running safari'
+                            sh 'echo Running safari'
                         }
                     }
                 } 
