@@ -1,43 +1,48 @@
-pipeline{
+pipeline {
     agent any
-    stages{
-        stage('pre-build'){
-            steps{
+    stages {
+        stage('pre-build') {
+            steps {
                 sh "echo bonjour"
             }
         }
-        stage('build'){
-                steps{
-                    sh 'echo build in progress'
-                }
+        stage('build') {
+            steps {
+                sh 'echo build in progress'
             }
-        stage('Unit tests'){
-            steps{
+        }
+        stage('Unit tests') {
+            steps {
                 sh 'echo Running unit tests'
             }
         }
-        stage('deploy'){
-            steps{
+        stage('deploy') {
+            steps {
                 sh 'echo Deploying build'
             }
         }
-        stage('Regression tests'){
-            parallel{
-                chrome{
-                    sh 'echo running chrome'
+        stage('Regression tests') {
+            parallel {
+                chrome {
+                    steps {
+                        sh 'echo running chrome'
+                    }
                 }
-                firefox{
-                    sh 'echo running firefox'
+                firefox {
+                    steps {
+                        sh 'echo running firefox'
+                    }
                 }
-                safari{
-                    sh 'echo running safari'
+                safari {
+                    steps {
+                        sh 'echo running safari'
+                    }
                 }
             }
         }
     }
-
-    post{
-        always{
+    post {
+        always {
             echo 'ALWAYS'
         }
     }
