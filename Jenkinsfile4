@@ -21,6 +21,21 @@ pipeline{
                 sh 'echo Deploying build'
             }
         }
+        stage('Regression tests'){
+            steps{
+                parallel{
+                    chrome :{
+                        sh 'echo running chrome'
+                    },
+                    firefox :{
+                        sh 'echo running firefox'
+                    },
+                    safari :{
+                        sh 'echo running safari'
+                    }
+                }
+            }
+        }
     }
 
     post{
