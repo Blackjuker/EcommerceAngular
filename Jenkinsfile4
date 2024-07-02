@@ -22,17 +22,15 @@ pipeline{
             }
         }
         stage('Regression tests'){
-            steps{
-                parallel{
-                    chrome :{
-                        sh 'echo running chrome'
-                    }
-                    firefox :{
-                        sh 'echo running firefox'
-                    }
-                    safari :{
-                        sh 'echo running safari'
-                    }
+            parallel{
+                chrome :{
+                    sh 'echo running chrome'
+                }
+                firefox :{
+                    sh 'echo running firefox'
+                }
+                safari :{
+                    sh 'echo running safari'
                 }
             }
         }
