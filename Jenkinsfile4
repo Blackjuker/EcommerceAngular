@@ -23,17 +23,17 @@ pipeline {
         }
         stage('Regression tests') {
             parallel {
-                chrome {
+                stage('chrome') {
                     steps {
                         sh 'echo running chrome'
                     }
                 }
-                firefox {
+                stage('firefox') {
                     steps {
                         sh 'echo running firefox'
                     }
                 }
-                safari {
+                stage('safari') {
                     steps {
                         sh 'echo running safari'
                     }
