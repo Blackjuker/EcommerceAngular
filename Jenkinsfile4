@@ -2,7 +2,9 @@ pipeline{
     agent any
     stages{
         stage('pre-build'){
-            sh "echo bonjour"
+            steps{
+                sh "echo bonjour"
+            }
         }
     }
 }
