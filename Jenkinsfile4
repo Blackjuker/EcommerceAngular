@@ -6,5 +6,20 @@ pipeline{
                 sh "echo bonjour"
             }
         }
+        stage('build'){
+                steps{
+                    sh 'echo build in progress'
+                }
+            }
+        stage('Unit tests'){
+            steps{
+                sh 'echo Running unit tests'
+            }
+        }
+        stage('deploy'){
+            steps{
+                sh 'echo Deploying build'
+            }
+        }
     }
 }
